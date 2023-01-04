@@ -1,0 +1,173 @@
+.wheel-frame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    gap: 1.5rem;
+    margin-top: 4rem;
+    padding: 20px 20px 50px 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid red;
+}
+
+.cogwheel-container {
+    background-size: 160px;
+    width: 160px;
+    height: 160px;
+    line-height: 120px;
+    color: black;
+    text-align: center;
+    transition: 0.2s all ease-in-out;
+}
+
+.wheel-frame :nth-child(even) {
+    margin-top: 3rem;
+}
+
+.cogwheel-container:hover {
+    transform: scale(2);
+    z-index: 2;
+}
+
+.rotate-forward-szy {
+    animation: rotateCogwheel 10s linear 0s infinite;
+    /*
+    animation-name: rotateCogwheel;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    */
+}
+
+.rotate-backward-szy {
+    animation: rotateCogwheel 10s linear 0s infinite reverse;
+}
+
+.rotate-forward-szy:hover {
+    /* -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused; */
+
+    animation-play-state: paused;
+    cursor: pointer;
+    animation: reverseCogwheel 0.4s linear 0s;
+
+}
+
+.rotate-backward-szy:hover {
+    /* -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused; */
+
+    animation-play-state: paused;
+    cursor: pointer;
+    animation: reverseCogwheel 0.4s linear 0s;
+}
+
+@keyframes rotateCogwheel {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes reverseCogwheel {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.cog-label {
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.3em 0.5em 0.3em 0.5em;
+}
+
+/* ##### Zahnräder #####  */
+
+.cogwheel-black {
+    background-image: url(zahnrad_black.svg);
+    background-size: 160px;
+    width: 160px;
+    height: 160px;
+}
+
+.cogwheel-red {
+    background-image: url(zahnrad_red.svg);
+    background-size: 160px;
+    width: 160px;
+    height: 160px;
+}
+
+.cogwheel-green {
+    background-image: url(zahnrad_green.svg);
+    background-size: 160px;
+    width: 160px;
+    height: 160px;
+}
+
+.cogwheel-lightblue {
+    background-image: url(zahnrad_lightblue.svg);
+    background-size: 160px;
+    width: 160px;
+    height: 160px;
+}
+
+.cogwheel-darkblue {
+    background-image: url(zahnrad_darkblue.svg);
+    background-size: 160px;
+    width: 160px;
+    height: 160px;
+}
+
+.cogwheel-grey {
+    background-image: url(zahnrad_grey.svg);
+    background-size: 160px;
+    width: 160px;
+    height: 160px;
+}
+
+.cogwheel-yellow {
+    background-image: url(zahnrad_yellow.svg);
+    background-size: 160px;
+    width: 160px;
+    height: 160px;
+}
+
+.cogwheel-pink {
+    background-image: url(zahnrad_pink.svg);
+    background-size: 160px;
+    width: 160px;
+    height: 160px;
+}
+
+.cogwheel-orange {
+    background-image: url(zahnrad_orange.svg);
+    background-size: 160px;
+    width: 160px;
+    height: 160px;
+}
+
+.cogwheel-lightgreen {
+    background-image: url(zahnrad_lightgreen.svg);
+    background-size: 160px;
+    width: 160px;
+    height: 160px;
+}
+
+.cogwheel-violet {
+    background-image: url(zahnrad_violet.svg);
+    background-size: 160px;
+    width: 160px;
+    height: 160px;
+}
