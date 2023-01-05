@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal.css">
+    <title>Zahnrad Animation + Modal Window + Slideshow</title>
+</head>
+
+<body>
+    <h1>Beratungskonzept BS16</h1>
+    <div class="cogwheel-frame">
+        <div class="cogwheel-container">
+            <div class="rotate-forward-szy cogwheel-black" onclick="openModal();currentSlide(1)"><span class="cog-label">Beratungsleher:innen</span></div>
+        </div>
+        <div class="cogwheel-container">
+            <div class="rotate-backward-szy cogwheel-red" onclick="openModal();currentSlide(2)"><span class="cog-label">Arbeitsassistenz</span></div>
+        </div>
+        <div class="cogwheel-container">
+            <div class="rotate-forward-szy cogwheel-green" onclick="openModal();currentSlide(3)"><span class="cog-label">Lerncoaches</span></div>
+        </div>
+        <div class="cogwheel-container">
+            <div class="rotate-backward-szy cogwheel-lightblue" onclick="openModal();currentSlide(4)"><span class="cog-label">Sozialpädagog:in</span></div>
+        </div>
+        <div class="cogwheel-container">
+            <div class="rotate-forward-szy cogwheel-pink" onclick="openModal();currentSlide(5)"><span class="cog-label">Cop4You</span></div>
+        </div>
+        <div class="cogwheel-container">
+            <div class="rotate-backward-szy cogwheel-lightgreen" onclick="openModal();currentSlide(6)"><span class="cog-label">Sprachbeauftragte</span></div>
+        </div>
+        <div class="cogwheel-container">
+            <div class="rotate-forward-szy cogwheel-yellow" onclick="openModal();currentSlide(7)"><span class="cog-label">Krisenteam</span></div>
+        </div>
+        <div class="cogwheel-container">
+            <div class="rotate-backward-szy cogwheel-darkblue" onclick="openModal();currentSlide(8)"><span class="cog-label">Inklusionsbeauftragte</span></div>
+        </div>
+        <div class="cogwheel-container">
+            <div class="rotate-backward-szy cogwheel-violet" onclick="openModal();currentSlide(9)"><span class="cog-label">ASA-Flex</span></div>
+        </div>
+        <div class="cogwheel-container">
+            <div class="rotate-forward-szy cogwheel-grey" onclick="openModal();currentSlide(10)"><span class="cog-label">AV-Begleitung</span></div>
+        </div>
+        <div class="cogwheel-container">
+            <div class="rotate-backward-szy cogwheel-orange" onclick="openModal();currentSlide(11)"><span class="cog-label">Verbindungslehrer:in</span></div>
+        </div>
+    </div>
+
+<!-- ########## START Modal Window ########## -->
+
+<!-- <<h2 style="text-align:center">Slideshow</h2>
+div class="row">
+    <div class="column">
+        <img src="zahnrad_black.svg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+        <img src="zahnrad_red.svg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+        <img src="zahnrad_green.svg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+    </div>
+    <div class="column">
+        <img src="zahnrad_black.svg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+    </div>
+</div> -->
+
+<div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+
+        <div class="mySlides">
+            <div class="numbertext">1 / 4</div>
+            <!-- <img src="zahnrad_black.svg" style="width:100%"> -->
+            <div class="card" style="width:100%">
+                <h3>Beratungslehrer:innen</h3>
+                <p>hier folgt die Tabelle mit den Daten</p>
+            </div>
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">2 / 4</div>
+            <img src="zahnrad_red.svg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">3 / 4</div>
+            <img src="zahnrad_green.svg" style="width:100%">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext">4 / 4</div>
+            <img src="zahnrad_lightblue.svg" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+
+
+        <div class="column">
+            <img class="demo cursor" src="zahnrad_black.svg" style="width:100%" onclick="currentSlide(1)"
+                alt="Nature and sunrise">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="zahnrad_red.svg" style="width:100%" onclick="currentSlide(2)" alt="Snow">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="zahnrad_green.svg" style="width:100%" onclick="currentSlide(3)"
+                alt="Mountains and fjords">
+        </div>
+        <div class="column">
+            <img class="demo cursor" src="zahnrad_lightblue.svg" style="width:100%" onclick="currentSlide(4)"
+                alt="Northern Lights">
+        </div>
+    </div>
+</div>
+
+<script>
+    function openModal() {
+        document.getElementById("myModal").style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+    }
+
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+</script>
+
+</body>
+
+</html>
